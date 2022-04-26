@@ -94,6 +94,8 @@ body {
     position: relative;
     display: block;
     margin-top: 14px;
+    /* width: 288px;
+    height: 102px; */
 }
 
 .good-cate {
@@ -1730,6 +1732,10 @@ body {
 .popular-bottom {
     position: relative;
     display: block;
+}
+
+.good-tag-red {
+    background-color: #e14949;
 }
 
 /* 브랜드관 */
