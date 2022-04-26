@@ -254,7 +254,7 @@ window.onload = function () {
     // popular 데이터 출력을 위한 데이터
     // 서버에 자료를 요청하는 것 : HTTP Request
     // 서버에서 응답오는 것 : HTTP Response
-    fetch('../data.json')
+    fetch('https://fedevmj.github.io/hansalim/data.json')
     .then(res => res.json())
     // result는 임의의 결과값이며 res.json의 결과값.
     .then(result => {
