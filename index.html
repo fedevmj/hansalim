@@ -4,11 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-
-    <link rel="apple-touch-icon-precomposed" href="images/mobile_web_icon.png">
     <meta name="viewport"
         content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <!-- favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
 
     <title>한살림 장보기 :: 지구를 살리는 뜻깊은 생활실천, 한살림(클론코딩)</title>
     <!--[if lt IE 9]>
@@ -17,20 +16,44 @@
     <script src="js/prefixfree.min.js"></script>
     <script src="js/jquery.min.js"></script>
 
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
     <!-- swiper -->
     <link rel="stylesheet" href="js/swiper/swiper.min.css">
     <script src="js/swiper/swiper.min.js"></script>
 
     <!-- nicescroll -->
     <script src="js/jquery.nicescroll.min.js"></script>
-
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
-
     <script src="js/script.js"></script>
 </head>
 
 <body>
+
+    <div class="modal">
+        <div class="modal-wrap">
+            <div class="modal-box modal-front">
+                <i class="fas fa-fish"></i>
+                <h1> HANSALIM GROCERY </h1>
+                <h2>이 사이트는 스터디용으로 제작되었으며<br>
+                    리소스는 원저작자에게 있습니다.</h2>
+                <span>본 사이트는 Chrome에 최적화 되어있습니다.</span>
+            </div>
+
+            <div class="modal-box modal-back">
+                <ul class="modal-list">
+                    <h3><i class="fas fa-highlighter"></i> <u>다음 내용을 적용하였습니다</u> :) </h3>
+                    <li>1. <b>json 데이터</b>를 직접 작성하고 <b>JavaScript</b>를 이용해 해당 데이터 파일을 탭메뉴 구현에 활용하였습니다.</li>
+                    <li>2. <b>Nicescroll</b> 라이브러리를 이용하여 전체메뉴의 스크롤바를 꾸며주었습니다.</li>
+                    <li>3. 각 슬라이드 메뉴 구현에 <b>Swiper</b>를 활용하였습니다.</li>
+                </ul>
+            </div>
+
+            <button class="modal-close"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
 
     <!-- 고정메뉴 -->
     <div class="fixmenu">
@@ -84,7 +107,7 @@
                         <li><a href="#">나의한살림</a></li>
                         <li>
                             <a href="#" id="login-menu">조합원센터</a>
-                            <ul class="arrow-list arrow-list-login">
+                            <ul class="dropdown-list dropdown-list-login">
                                 <li><a href="#">상담/문의</a></li>
                                 <li><a href="#">자주묻는질문</a></li>
                                 <li><a href="#">이용후기</a></li>
@@ -103,9 +126,46 @@
                 <div class="container">
 
                     <div class="header-main-left">
+
+                        <a href="#" id="all">
+                            <img src="images/menu_icon.png" alt="전체물품">
+                            전체물품
+                        </a>
+
                         <!-- 전체메뉴 -->
                         <div class="all-menu">
 
+                            <!-- 기본메뉴 -->
+                            <div class="all-menu-wrap">
+                                <ul class="all-list-cate">
+                                    <li><a href="#"><span>쌀/잡곡</span></a></li>
+                                    <li><a href="#"><span>채소/버섯</span></a></li>
+                                    <li><a href="#"><span>과일/견과</span></a></li>
+                                    <li><a href="#"><span>축산/축산가공</span></a></li>
+                                    <li><a href="#"><span>수산/수산가공</span></a></li>
+                                    <li><a href="#"><span>반찬/양념/가루</span></a></li>
+                                    <li><a href="#"><span>식사대용/간편식</span></a></li>
+                                    <li><a href="#"><span>간식/음료/유제품</span></a></li>
+                                    <li><a href="#"><span>건강/차</span></a></li>
+                                    <li><a href="#"><span>화장품/오가닉코튼</span></a></li>
+                                    <li><a href="#"><span>주방/욕실/세정</span></a></li>
+                                    <li><a href="#"><span>휴지/생활</span></a></li>
+                                    <li><a href="#"><span>반려동물</span></a></li>
+                                    <li><a href="#"><span>대용량/어린이집</span></a></li>
+                                </ul>
+                                <ul class="all-list-theme">
+                                    <li><a href="#"><span class="ball">영유아</span></a></li>
+                                    <li><a href="#"><span class="ball">채식</span></a></li>
+                                </ul>
+                                <ul class="all-list-service">
+                                    <li><a href="#"><span>택배공급</span></a></li>
+                                    <li><a href="#"><span>사전예약</span></a></li>
+                                    <li><a href="#"><span>산지직송</span></a></li>
+                                    <li><a href="#"><span>매장만공급</span></a></li>
+                                    <li><a href="#"><span>브랜드관</span></a></li>
+                                </ul>
+                            </div>
+                            <!--// 기본메뉴  -->
                             <!-- 상세메뉴 -->
                             <div class="all-menu-detail">
                                 <ul class="all-menu-detail-list">
@@ -214,45 +274,8 @@
                             </div>
                             <!--// 상세메뉴 -->
 
-                            <!-- 기본메뉴 -->
-                            <div class="all-menu-wrap">
-                                <ul class="all-list-cate">
-                                    <li><a href="#"><span>쌀/잡곡</span></a></li>
-                                    <li><a href="#"><span>채소/버섯</span></a></li>
-                                    <li><a href="#"><span>과일/견과</span></a></li>
-                                    <li><a href="#"><span>축산/축산가공</span></a></li>
-                                    <li><a href="#"><span>수산/수산가공</span></a></li>
-                                    <li><a href="#"><span>반찬/양념/가루</span></a></li>
-                                    <li><a href="#"><span>식사대용/간편식</span></a></li>
-                                    <li><a href="#"><span>간식/음료/유제품</span></a></li>
-                                    <li><a href="#"><span>건강/차</span></a></li>
-                                    <li><a href="#"><span>화장품/오가닉코튼</span></a></li>
-                                    <li><a href="#"><span>주방/욕실/세정</span></a></li>
-                                    <li><a href="#"><span>휴지/생활</span></a></li>
-                                    <li><a href="#"><span>반려동물</span></a></li>
-                                    <li><a href="#"><span>대용량/어린이집</span></a></li>
-                                </ul>
-                                <ul class="all-list-theme">
-                                    <li><a href="#"><span class="ball">영유아</span></a></li>
-                                    <li><a href="#"><span class="ball">채식</span></a></li>
-                                </ul>
-                                <ul class="all-list-service">
-                                    <li><a href="#"><span>택배공급</span></a></li>
-                                    <li><a href="#"><span>사전예약</span></a></li>
-                                    <li><a href="#"><span>산지직송</span></a></li>
-                                    <li><a href="#"><span>매장만공급</span></a></li>
-                                    <li><a href="#"><span>브랜드관</span></a></li>
-                                </ul>
-                            </div>
-                            <!--// 기본메뉴  -->
-
                         </div>
                         <!--// 전체메뉴 -->
-
-                        <a href="#" id="all">
-                            <img src="images/menu_icon.png" alt="전체물품">
-                            전체물품
-                        </a>
 
                         <nav class="nav">
                             <ul class="gnb clearfix">
@@ -263,8 +286,8 @@
                                 <li><a href="#" class="ball">설 선물</a></li>
                                 <li><a href="#" class="ball">채식</a></li>
                                 <li>
-                                    <a href="#" id="arrow">참여<i></i></a>
-                                    <ul class="arrow-list arrow-list-event">
+                                    <a href="#" id="dropdown">참여<i></i></a>
+                                    <ul class="dropdown-list dropdown-list-event">
                                         <li><a href="#">신규물품제안</a></li>
                                         <li><a href="#">참여이벤트</a></li>
                                     </ul>
@@ -274,7 +297,7 @@
 
                         <div class="more-div">
                             <a href="#" id="more">더보기<i></i></a>
-                            <ul class="arrow-list arrow-list-more">
+                            <ul class="dropdown-list dropdown-list-more">
                                 <li><a href="/#">한살림이야기</a></li>
                                 <li><a href="#">생산자와 물품</a></li>
                                 <li><a href="#">세상의 밥</a></li>
@@ -305,38 +328,33 @@
                 <div class="swiper-container sw-visual">
 
                     <div class="swiper-wrapper">
-
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_01.jpg" alt="상품"></a>
+                            <a href="#"><img src="images/swiper_img_01.jpeg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_02.jpg" alt="상품"></a>
+                            <a href="#"><img src="images/swiper_img_02.jpeg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_03.jpg" alt="상품"></a>
+                            <a href="#"><img src="images/swiper_img_03.jpeg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_04.jpg" alt="상품"></a>
+                            <a href="#"><img src="images/swiper_img_04.jpeg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_05.jpg" alt="상품"></a>
+                            <a href="#"><img src="images/swiper_img_05.jpeg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_06.jpg" alt="상품"></a>
+                            <a href="#"><img src="images/swiper_img_06.jpeg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_07.jpg" alt="상품"></a>
+                            <a href="#"><img src="images/swiper_img_07.jpeg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_08.jpg" alt="상품"></a>
+                            <a href="#"><img src="images/swiper_img_08.jpeg" alt="상품"></a>
                         </div>
                         <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_09.jpg" alt="상품"></a>
+                            <a href="#"><img src="images/swiper_img_09.jpeg" alt="상품"></a>
                         </div>
-                        <div class="swiper-slide">
-                            <a href="#"><img src="images/swiper_img_10.jpg" alt="상품"></a>
-                        </div>
-
                     </div>
 
                     <button class="sw-visual-prev"></button>
@@ -360,38 +378,15 @@
                     <div class="good-wrap clearfix">
                         <a href="#" class="good-link no-ml">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="images/good_1.jpeg" alt="제품">
                             </span>
                             <div class="good-info">
-                                <span class="good-cate">
-                                    <em class="good-cate-txt">유기농</em>
-                                </span>
+
                                 <span class="good-title">
-                                    백미/유(4kg)
+                                    부추(200g)
                                 </span>
                                 <span class="good-price">
-                                    <b>17,900</b>원
-                                </span>
-                            </div>
-
-                            <span class="good-tag">인기</span>
-                            <button class="good-cart"></button>
-
-                        </a>
-
-                        <a href="#" class="good-link">
-                            <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
-                            </span>
-                            <div class="good-info">
-                                <span class="good-cate">
-                                    <em class="good-cate-txt">유기농</em>
-                                </span>
-                                <span class="good-title">
-                                    백미/유(4kg)
-                                </span>
-                                <span class="good-price">
-                                    <b>17,900</b>원
+                                    <b>1,750</b>원
                                 </span>
                             </div>
 
@@ -401,36 +396,51 @@
 
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="images/good_2.jpeg" alt="제품">
                             </span>
                             <div class="good-info">
-                                <span class="good-cate">
-                                    <em class="good-cate-txt">유기농</em>
-                                </span>
+
                                 <span class="good-title">
-                                    백미/유(4kg)
+                                    세발나물(200g)
                                 </span>
                                 <span class="good-price">
-                                    <b>17,900</b>원
+                                    <b>2,150</b>원
                                 </span>
                             </div>
 
                             <span class="good-tag">인기</span>
                             <button class="good-cart"></button>
                         </a>
+
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="images/good_3.jpeg" alt="제품">
                             </span>
                             <div class="good-info">
-                                <span class="good-cate">
-                                    <em class="good-cate-txt">유기농</em>
-                                </span>
+
                                 <span class="good-title">
-                                    백미/유(4kg)
+                                    비빔냉면(420g/2인분)
                                 </span>
                                 <span class="good-price">
-                                    <b>17,900</b>원
+                                    <b>5,250</b>원
+                                </span>
+                            </div>
+
+                            <span class="good-tag">인기</span>
+                            <button class="good-cart"></button>
+                        </a>
+
+                        <a href="#" class="good-link">
+                            <span class="good-img">
+                                <img src="images/good_4.jpeg" alt="제품">
+                            </span>
+                            <div class="good-info">
+
+                                <span class="good-title">
+                                    애호박(1개)
+                                </span>
+                                <span class="good-price">
+                                    <b>2,250</b>원
                                 </span>
                             </div>
 
@@ -442,17 +452,49 @@
                     <div class="good-wrap clearfix no-mb">
                         <a href="#" class="good-link no-ml">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="images/good_5.jpeg" alt="제품">
                             </span>
                             <div class="good-info">
-                                <span class="good-cate">
-                                    <em class="good-cate-txt">유기농</em>
-                                </span>
+
                                 <span class="good-title">
-                                    백미/유(4kg)
+                                    짜먹는워터젤리포도산머루(100g*10봉)
                                 </span>
                                 <span class="good-price">
-                                    <b>17,900</b>원
+                                    <b>10,000</b>원
+                                </span>
+                            </div>
+                            <button class="good-cart"></button>
+                        </a>
+
+                        <a href="#" class="good-link">
+                            <span class="good-img">
+                                <img src="images/good_6.jpeg" alt="제품">
+                            </span>
+                            <div class="good-info">
+
+                                <span class="good-title">
+                                    달래(100g)
+                                </span>
+                                <span class="good-price">
+                                    <b>2,700</b>원
+                                </span>
+                            </div>
+
+                            <span class="good-tag">인기</span>
+                            <button class="good-cart"></button>
+                        </a>
+
+                        <a href="#" class="good-link">
+                            <span class="good-img">
+                                <img src="images/good_7.jpeg" alt="제품">
+                            </span>
+                            <div class="good-info">
+
+                                <span class="good-title">
+                                    동치미냉면국수(330g)
+                                </span>
+                                <span class="good-price">
+                                    <b>1,450</b>원
                                 </span>
                             </div>
 
@@ -461,59 +503,18 @@
                         </a>
                         <a href="#" class="good-link">
                             <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
+                                <img src="images/good_8.jpeg" alt="제품">
                             </span>
                             <div class="good-info">
-                                <span class="good-cate">
-                                    <em class="good-cate-txt">유기농</em>
-                                </span>
+
                                 <span class="good-title">
-                                    백미/유(4kg)
+                                    포도주스(1l)
                                 </span>
                                 <span class="good-price">
-                                    <b>17,900</b>원
+                                    <b>12,800</b>원
                                 </span>
                             </div>
 
-                            <span class="good-tag">인기</span>
-                            <button class="good-cart"></button>
-                        </a>
-                        <a href="#" class="good-link">
-                            <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
-                            </span>
-                            <div class="good-info">
-                                <span class="good-cate">
-                                    <em class="good-cate-txt">유기농</em>
-                                </span>
-                                <span class="good-title">
-                                    백미/유(4kg)
-                                </span>
-                                <span class="good-price">
-                                    <b>17,900</b>원
-                                </span>
-                            </div>
-
-                            <span class="good-tag">인기</span>
-                            <button class="good-cart"></button>
-                        </a>
-                        <a href="#" class="good-link">
-                            <span class="good-img">
-                                <img src="images/good.jpg" alt="제품">
-                            </span>
-                            <div class="good-info">
-                                <span class="good-cate">
-                                    <em class="good-cate-txt">유기농</em>
-                                </span>
-                                <span class="good-title">
-                                    백미/유(4kg)
-                                </span>
-                                <span class="good-price">
-                                    <b>17,900</b>원
-                                </span>
-                            </div>
-
-                            <span class="good-tag">인기</span>
                             <button class="good-cart"></button>
                         </a>
                     </div>
@@ -554,17 +555,38 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/disc_1.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
 
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                손질자숙새꼬막살(150g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>5,700</b>원
+                                            </span>
+                                        </div>
+
+                                        <span class="good-tag">새물품</span>
+                                        <button class="good-cart"></button>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide">
+                                    <a href="#" class="good-link">
+                                        <span class="good-img">
+                                            <img src="images/disc_2.jpeg" alt="제품">
+                                        </span>
+                                        <div class="good-info">
+                                            <span class="good-cate">
+
+                                            </span>
+                                            <span class="good-title">
+                                                삶은찰옥수수(3개)
+                                            </span>
+                                            <span class="good-price">
+                                                <b>5,700</b>원
                                             </span>
                                         </div>
 
@@ -575,168 +597,205 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/disc_3.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
 
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                자색아스파라거스(150g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>4,900</b>원
                                             </span>
                                         </div>
 
-                                        <span class="good-tag">인기</span>
                                         <button class="good-cart"></button>
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/disc_4.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
 
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                미효담 발효한방 바디크림(150g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>18,000</b>원
                                             </span>
                                         </div>
 
-                                        <span class="good-tag">인기</span>
                                         <button class="good-cart"></button>
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/disc_5.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
 
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                아로니아즙모음(720ml*2병)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>32,000</b>원
                                             </span>
                                         </div>
 
-                                        <span class="good-tag">인기</span>
                                         <button class="good-cart"></button>
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/disc_6.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
 
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                녹용홍삼모음
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>120,000</b>원
                                             </span>
                                         </div>
 
-                                        <span class="good-tag">인기</span>
                                         <button class="good-cart"></button>
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/disc_7.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
 
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                녹용홍삼환(4.2g*10환)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>50,000</b>원
                                             </span>
                                         </div>
 
-                                        <span class="good-tag">인기</span>
+                                        <span class="good-tag">새물품</span>
                                         <button class="good-cart"></button>
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/disc_8.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
 
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                녹용홍삼정(120g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>65,000</b>원
                                             </span>
                                         </div>
 
-                                        <span class="good-tag">인기</span>
+                                        <span class="good-tag">새물품</span>
                                         <button class="good-cart"></button>
                                     </a>
                                 </div>
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/disc_9.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
 
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                온열마사지 바디크림(80g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>9,700</b>원
                                             </span>
                                         </div>
 
-                                        <span class="good-tag">인기</span>
                                         <button class="good-cart"></button>
                                     </a>
                                 </div>
+
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/disc_10.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
 
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                쿨링마사지 바디젤(80g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>9,700</b>원
                                             </span>
                                         </div>
 
-                                        <span class="good-tag">인기</span>
+                                        <button class="good-cart"></button>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="good-link">
+                                        <span class="good-img">
+                                            <img src="images/disc_11.jpeg" alt="제품">
+                                        </span>
+                                        <div class="good-info">
+                                            <span class="good-cate">
+
+                                            </span>
+                                            <span class="good-title title-2r">
+                                                동백비비크림(은은한꽃/40ml)(20년 5월 제조)
+                                            </span>
+                                            <span class="good-price">
+                                                <b>17,700</b>원
+                                            </span>
+                                        </div>
+
+                                        <button class="good-cart"></button>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="good-link">
+                                        <span class="good-img">
+                                            <img src="images/disc_12.jpeg" alt="제품">
+                                        </span>
+                                        <div class="good-info">
+                                            <span class="good-cate">
+
+                                            </span>
+                                            <span class="good-title">
+                                                자연그대로 판테놀 보송크림(100g)
+                                            </span>
+                                            <span class="good-price">
+                                                <b>14,500</b>원
+                                            </span>
+                                        </div>
+
                                         <button class="good-cart"></button>
                                     </a>
                                 </div>
@@ -766,27 +825,27 @@
                     <div class="new-main clearfix">
                         <div class="new-main-left">
                             <a href="#" class="new-good-big">
-                                <img src="images/new_1.jpg" alt="제품">
-                                <p class="new-good-title">국산 꽃사슴 녹용과 홍삼을 한 번에 '녹용홍삼정'</p>
-                                <span class="new-good-desc">꽃사슴 녹용, 6년근 홍삼에 한약재까지 더해 진하게 농축</span>
+                                <img src="images/new_1.jpeg" alt="제품">
+                                <p class="new-good-title">한살림 우유로 만들어 고소하고 진한 '우유꽁꽁'</p>
+                                <span class="new-good-desc">유기농 원유가 80.8% 함유되어 우유 본연의 맛이 그대로</span>
                             </a>
                         </div>
                         <div class="new-main-right clearfix">
                             <a href="#" class="new-good-sm">
-                                <img src="images/new_2.jpg" alt="제품" class="new-good-sm-img">
-                                <span class="new-good-sm-title">녹용, 홍삼, 영지버섯을 한 알에 '녹용홍삼환'</span>
+                                <img src="images/new_2.jpeg" alt="제품" class="new-good-sm-img">
+                                <span class="new-good-sm-title">늘보리 100% '보리로만만든보리국수'</span>
                             </a>
                             <a href="#" class="new-good-sm">
-                                <img src="images/new_3.jpg" alt="제품" class="new-good-sm-img">
-                                <span class="new-good-sm-title">새콤 짭조름한 절임반찬 '명이나물장아찌'</span>
+                                <img src="images/new_3.jpeg" alt="제품" class="new-good-sm-img">
+                                <span class="new-good-sm-title">싱싱한 새꼬막을 손질해 부드럽게 익힌 '손질자숙새꼬막살'</span>
                             </a>
                             <a href="#" class="new-good-sm">
-                                <img src="images/new_4.jpg" alt="제품" class="new-good-sm-img">
-                                <span class="new-good-sm-title">제주딱새우와 토마토의 만남 '칠리새우'</span>
+                                <img src="images/new_4.jpeg" alt="제품" class="new-good-sm-img">
+                                <span class="new-good-sm-title">딸기의 맛과 향을 크림에 그대로 담은 '딸기크림빵'</span>
                             </a>
                             <a href="#" class="new-good-sm">
-                                <img src="images/new_5.jpg" alt="제품" class="new-good-sm-img">
-                                <span class="new-good-sm-title">진한 원유에 새콤달콤 딸기과즙 '유기농딸기요구르트'</span>
+                                <img src="images/new_5.jpeg" alt="제품" class="new-good-sm-img">
+                                <span class="new-good-sm-title">큰 용량으로 즐기는 '상큼한유기농블루베리요구르트'</span>
                             </a>
                         </div>
                     </div>
@@ -807,7 +866,7 @@
                         </div>
 
                         <p class="section-desc">
-                            겨울철 뜨끈한 국물이 생각날 땐 꽃게탕!
+                            입맛 살려주는 파릇파릇 나물
                         </p>
 
                         <div class="sw-copartner-control">
@@ -827,17 +886,19 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/mem_1.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
-
+                                                <em class="good-cate-txt">유기농</em>
+                                                <em class="good-cate-txt">무기농</em>
                                             </span>
+
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                쑥(200g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>2,700</b>원
                                             </span>
                                         </div>
 
@@ -849,39 +910,19 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/mem_2.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
-
+                                                <em class="good-cate-txt">유기농</em>
+                                                <em class="good-cate-txt">무기농</em>
                                             </span>
+
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                비타민채소(200g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
-                                            </span>
-                                        </div>
-
-                                        <span class="good-tag good-tag-red">알뜰</span>
-                                        <button class="good-cart"></button>
-                                    </a>
-                                </div>
-
-                                <div class="swiper-slide">
-                                    <a href="#" class="good-link">
-                                        <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
-                                        </span>
-                                        <div class="good-info">
-                                            <span class="good-cate">
-
-                                            </span>
-                                            <span class="good-title">
-                                                백미/유(4kg)
-                                            </span>
-                                            <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>1,450</b>원
                                             </span>
                                         </div>
 
@@ -893,17 +934,18 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/mem_3.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
-
+                                                <em class="good-cate-txt">유기농</em>
+                                                <em class="good-cate-txt">무기농</em>
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                쌈케일(150g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>1,500</b>원
                                             </span>
                                         </div>
 
@@ -915,21 +957,21 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/mem_4.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
-
+                                                <em class="good-cate-txt">유기농</em>
+                                                <em class="good-cate-txt">무기농</em>
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                생취나물(300g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>3,450</b>원
                                             </span>
                                         </div>
 
-                                        <span class="good-tag good-tag-red">알뜰</span>
                                         <button class="good-cart"></button>
                                     </a>
                                 </div>
@@ -937,17 +979,18 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/mem_5.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
-
+                                                <em class="good-cate-txt">유기농</em>
+                                                <em class="good-cate-txt">무기농</em>
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                치커리(100g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>1,000</b>원
                                             </span>
                                         </div>
 
@@ -959,17 +1002,40 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/mem_6.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
-
+                                                <em class="good-cate-txt">유기농</em>
+                                                <em class="good-cate-txt">무기농</em>
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                산나물모음(600g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>16,200</b>원
+                                            </span>
+                                        </div>
+                                        <span class="good-tag">인기</span>
+                                        <button class="good-cart"></button>
+                                    </a>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <a href="#" class="good-link">
+                                        <span class="good-img">
+                                            <img src="images/mem_7.jpeg" alt="제품">
+                                        </span>
+                                        <div class="good-info">
+                                            <span class="good-cate">
+                                                <em class="good-cate-txt">유기농</em>
+                                                <em class="good-cate-txt">무기농</em>
+                                            </span>
+                                            <span class="good-title">
+                                                산나물모음(600g)
+                                            </span>
+                                            <span class="good-price">
+                                                <b>16,200</b>원
                                             </span>
                                         </div>
 
@@ -981,21 +1047,22 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/mem_8.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
-
+                                                <em class="good-cate-txt">유기농</em>
+                                                <em class="good-cate-txt">무기농</em>
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                방풍나물(150g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>2,500</b>원
                                             </span>
                                         </div>
 
-                                        <span class="good-tag good-tag-red">알뜰</span>
+                                        <span class="good-tag">인기</span>
                                         <button class="good-cart"></button>
                                     </a>
                                 </div>
@@ -1003,20 +1070,20 @@
                                 <div class="swiper-slide">
                                     <a href="#" class="good-link">
                                         <span class="good-img">
-                                            <img src="images/good.jpg" alt="제품">
+                                            <img src="images/mem_9.jpeg" alt="제품">
                                         </span>
                                         <div class="good-info">
                                             <span class="good-cate">
-
+                                                <em class="good-cate-txt">유기농</em>
+                                                <em class="good-cate-txt">무기농</em>
                                             </span>
                                             <span class="good-title">
-                                                백미/유(4kg)
+                                                중파(500g)
                                             </span>
                                             <span class="good-price">
-                                                <b>17,900</b>원
+                                                <b>1,950</b>원
                                             </span>
                                         </div>
-
                                         <span class="good-tag">인기</span>
                                         <button class="good-cart"></button>
                                     </a>
@@ -1039,11 +1106,12 @@
                             </h2>
                         </div>
 
-                        <a href="#" class="section-bt">
-                            <!-- 대용량/어린이집 물품 더보기 -->
-                        </a>
+                        <div class="tab-bt-wrap">
+                            <a href="#" class="section-bt-tab">
+                                <!-- 대용량/어린이집 물품 더보기 -->
+                            </a>
+                        </div>
                     </div>
-
 
                     <div class="popular-middle">
                         <div class="popular-slide">
@@ -1336,7 +1404,6 @@
                                                 </li>
                                             </ul>
 
-
                                         </a>
                                     </div>
                                 </div>
@@ -1479,8 +1546,6 @@
                         </div>
                     </div>
 
-
-
                     <a href="#" class="banner-prev"></a>
                     <a href="#" class="banner-next"></a>
 
@@ -1498,7 +1563,6 @@
 
                     <div class="cook-main clearfix">
                         <div class="cook-left">
-                            <!-- js 로 배경을 인라인 방식으로 변경 해보자. -->
                             <a href="#" style="background: url('images/cook_main.jpg') no-repeat center">
                                 <div class="cook-box">
                                     <span class="cook-title">
@@ -1607,8 +1671,6 @@
                             어떤 물품을 구매했을까요?
                         </p>
 
-
-
                         <div class="sw-review-control">
                             <button class="sw-review-prev"></button>
                             <div class="swiper-pagination sw-review-pg"></div>
@@ -1622,254 +1684,159 @@
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
                                     <div class="review-box">
-
                                         <div class="review-box-title">
                                             <div class="review-box-left">
-                                                <a href="#" class="review-box-link">
-                                                    한우사골농축액140g(14g×10)
-                                                </a>
-
+                                                <a href="#" class="review-box-link">동치미김치(2kg)</a>
                                                 <span class="review-box-star">
                                                     4.0
                                                 </span>
-
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="images/review_1.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
-
                                         <p class="review-box-desc">
                                             <a href="#">
-                                                시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
-                                                작은 문어지만 저렴하게 먹을 수 있어 좋네요.
-                                                숙회로. 문어라면으로.
-                                                튀김으로 먹었네요~
-                                                다만 너무 작은것 3마리로 와서 아쉬웠어요
-                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                                국물과 무우가 따로 노는 느낌!!
+                                                제가 생각한 동치미 맛은 아닙니다만,
+                                                만드신분들의 정성과 노고를 생각하면서 맛있게 먹었습니다
                                             </a>
                                         </p>
-
-                                        <span class="review-box-id">
-                                            김*영 (한살림청주)
-                                        </span>
+                                        <span class="review-box-id">이*옥 (한살림성남용인)</span>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="review-box">
-
                                         <div class="review-box-title">
                                             <div class="review-box-left">
-                                                <a href="#" class="review-box-link">
-                                                    한우사골농축액140g(14g×10)
-                                                </a>
-
+                                                <a href="#" class="review-box-link">김밥용햄(285g)</a>
                                                 <span class="review-box-star">
                                                     4.0
                                                 </span>
-
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="images/review_2.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
-
                                         <p class="review-box-desc">
                                             <a href="#">
-                                                시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
-                                                작은 문어지만 저렴하게 먹을 수 있어 좋네요.
-                                                숙회로. 문어라면으로.
-                                                튀김으로 먹었네요~
-                                                다만 너무 작은것 3마리로 와서 아쉬웠어요
-                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                                그동안 김밥쌀때 햄은 제외였는데 한살림에서 나와 안심구매가능해서 좋아요.
+                                                잘라져있어 그것도 편해요.
                                             </a>
                                         </p>
-
-                                        <span class="review-box-id">
-                                            김*영 (한살림청주)
-                                        </span>
+                                        <span class="review-box-id">정*선 (한살림경기남부)</span>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="review-box">
-
                                         <div class="review-box-title">
                                             <div class="review-box-left">
-                                                <a href="#" class="review-box-link">
-                                                    한우사골농축액140g(14g×10)
-                                                </a>
-
+                                                <a href="#" class="review-box-link">숲사랑 3겹둥근휴지(18롤)</a>
                                                 <span class="review-box-star">
-                                                    4.0
+                                                    5.0
                                                 </span>
-
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="images/good_cate12_01.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
-
                                         <p class="review-box-desc">
                                             <a href="#">
-                                                시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
-                                                작은 문어지만 저렴하게 먹을 수 있어 좋네요.
-                                                숙회로. 문어라면으로.
-                                                튀김으로 먹었네요~
-                                                다만 너무 작은것 3마리로 와서 아쉬웠어요
-                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                                먼지가 진짜 적고 휴지가 짱짱해서 잘 닦여요.
                                             </a>
                                         </p>
-
-                                        <span class="review-box-id">
-                                            김*영 (한살림청주)
-                                        </span>
+                                        <span class="review-box-id">정*정 (한살림서울)</span>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="review-box">
-
                                         <div class="review-box-title">
                                             <div class="review-box-left">
-                                                <a href="#" class="review-box-link">
-                                                    한우사골농축액140g(14g×10)
-                                                </a>
-
+                                                <a href="#" class="review-box-link">숲사랑 뽑아쓰는 주방휴지(120매/3상자)</a>
                                                 <span class="review-box-star">
-                                                    4.0
+                                                    5.0
                                                 </span>
-
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="images/review_3.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
-
                                         <p class="review-box-desc">
                                             <a href="#">
-                                                시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
-                                                작은 문어지만 저렴하게 먹을 수 있어 좋네요.
-                                                숙회로. 문어라면으로.
-                                                튀김으로 먹었네요~
-                                                다만 너무 작은것 3마리로 와서 아쉬웠어요
-                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                                짱짱하니 물에 흐물거리지도 않고 아주 마음에 들어요.
                                             </a>
                                         </p>
-
-                                        <span class="review-box-id">
-                                            김*영 (한살림청주)
-                                        </span>
+                                        <span class="review-box-id">박*은 (한살림서울)</span>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="review-box">
-
                                         <div class="review-box-title">
                                             <div class="review-box-left">
-                                                <a href="#" class="review-box-link">
-                                                    한우사골농축액140g(14g×10)
-                                                </a>
-
+                                                <a href="#" class="review-box-link">제주백조기어묵(200g)</a>
                                                 <span class="review-box-star">
                                                     4.0
                                                 </span>
-
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="images/review_4.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
-
                                         <p class="review-box-desc">
                                             <a href="#">
-                                                시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
-                                                작은 문어지만 저렴하게 먹을 수 있어 좋네요.
-                                                숙회로. 문어라면으로.
-                                                튀김으로 먹었네요~
-                                                다만 너무 작은것 3마리로 와서 아쉬웠어요
-                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                                가격이 비싸 조금은 부담이 되지만 어릴적 부산에서 갓 먹던 어묵 맛과 비슷해서 좋았습니다
                                             </a>
                                         </p>
-
-                                        <span class="review-box-id">
-                                            김*영 (한살림청주)
-                                        </span>
+                                        <span class="review-box-id">정*선 (한살림경북동부)</span>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="review-box">
-
                                         <div class="review-box-title">
                                             <div class="review-box-left">
-                                                <a href="#" class="review-box-link">
-                                                    한우사골농축액140g(14g×10)
-                                                </a>
-
+                                                <a href="#" class="review-box-link">쑥(200g)</a>
                                                 <span class="review-box-star">
                                                     4.0
                                                 </span>
-
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="images/review_5.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
-
                                         <p class="review-box-desc">
                                             <a href="#">
-                                                시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
-                                                작은 문어지만 저렴하게 먹을 수 있어 좋네요.
-                                                숙회로. 문어라면으로.
-                                                튀김으로 먹었네요~
-                                                다만 너무 작은것 3마리로 와서 아쉬웠어요
-                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                                쑥국 끓여 먹었는데 향긋하니 봄이네요
                                             </a>
                                         </p>
-
-                                        <span class="review-box-id">
-                                            김*영 (한살림청주)
-                                        </span>
+                                        <span class="review-box-id">박*현 (한살림경기동부생협)</span>
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="review-box">
-
                                         <div class="review-box-title">
                                             <div class="review-box-left">
-                                                <a href="#" class="review-box-link">
-                                                    한우사골농축액140g(14g×10)
-                                                </a>
-
+                                                <a href="#" class="review-box-link">쑥(쪽파(500g))</a>
                                                 <span class="review-box-star">
-                                                    4.0
+                                                    5.0
                                                 </span>
-
                                             </div>
                                             <div class="review-box-right">
-                                                <a href="#"><img src="images/reveiw_1.jpg" alt="제품"
+                                                <a href="#"><img src="images/review_6.jpg" alt="제품"
                                                         class="review-box-img"></a>
                                             </div>
                                         </div>
-
                                         <p class="review-box-desc">
                                             <a href="#">
-                                                시판 문어숙회도 다리 몇개에 몇만원씩 하는데...
-                                                작은 문어지만 저렴하게 먹을 수 있어 좋네요.
-                                                숙회로. 문어라면으로.
-                                                튀김으로 먹었네요~
-                                                다만 너무 작은것 3마리로 와서 아쉬웠어요
-                                                2마리 정도로 사이즈 중 정도 되는 걸로 보내주시면 좋겠네요.
+                                                싱싱하고 연해서 김치담궈 맛있게 먹었어요
                                             </a>
                                         </p>
-
-                                        <span class="review-box-id">
-                                            김*영 (한살림청주)
-                                        </span>
+                                        <span class="review-box-id">장*연 (한살림서울)</span>
                                     </div>
                                 </div>
                             </div>
@@ -1892,39 +1859,39 @@
 
                             <ul class="notice-list notice-list-focus">
                                 <li>
-                                    <a href="#">2022년 설 연휴 운영 안내(매장, 주문공급, 조합원상담실)</a>
-                                    <span class="notice-date">2021.11.30</span>
+                                    <a href="#">2022년 GMO없는 건강한 밥상을 위해 함께해요</a>
+                                    <span class="notice-date">2022.05.04</span>
                                 </li>
                                 <li>
-                                    <a href="#">2022년 설 연휴 운영 안내(매장, 주문공급, 조합원상담실)</a>
-                                    <span class="notice-date">2021.11.30</span>
+                                    <a href="#">〈주간한살림〉 13호 | 모두를 위한 어린이날</a>
+                                    <span class="notice-date">2022.04.29</span>
                                 </li>
                                 <li>
-                                    <a href="#">2022년 설 연휴 운영 안내(매장, 주문공급, 조합원상담실)</a>
-                                    <span class="notice-date">2021.11.30</span>
+                                    <a href="#">2022 옷되살림 2주 연장, 옷을 더 모아주세요!</a>
+                                    <span class="notice-date">2022.04.28</span>
                                 </li>
                                 <li>
-                                    <a href="#">2022년 설 연휴 운영 안내(매장, 주문공급, 조합원상담실)</a>
-                                    <span class="notice-date">2021.11.30</span>
+                                    <a href="#">2022년 5월 물품 이용후기 이벤트</a>
+                                    <span class="notice-date">2022.04.27</span>
                                 </li>
                             </ul>
 
-                            <ul class="news-list">
+                            <ul class="notice-list">
                                 <li>
                                     <a href="#">냉장육(신선육) 포장 및 생물 수산물 흡수패드 변경 안내</a>
                                     <span class="notice-date">2021.11.30</span>
                                 </li>
                                 <li>
-                                    <a href="#">냉장육(신선육) 포장 및 생물 수산물 흡수패드 변경 안내</a>
-                                    <span class="notice-date">2021.11.30</span>
+                                    <a href="#">안심대안한우 거세우 전환 공급 안내</a>
+                                    <span class="notice-date">2021.05.04</span>
                                 </li>
                                 <li>
-                                    <a href="#">냉장육(신선육) 포장 및 생물 수산물 흡수패드 변경 안내</a>
-                                    <span class="notice-date">2021.11.30</span>
+                                    <a href="#">슬라이스반건조무화과(100g)</a>
+                                    <span class="notice-date">2022.04.29</span>
                                 </li>
                                 <li>
-                                    <a href="#">냉장육(신선육) 포장 및 생물 수산물 흡수패드 변경 안내</a>
-                                    <span class="notice-date">2021.11.30</span>
+                                    <a href="#">쫄면사리(175gx3개) , 막국수(582g/2인분)</a>
+                                    <span class="notice-date">2022.04.29</span>
                                 </li>
                             </ul>
 
@@ -2077,6 +2044,62 @@
             </div>
         </footer>
         <!--// 하단 -->
+    </div>
+
+    <!-- 비주얼 모달창 -->
+
+    <div class="visual-modal">
+        <ul class="visual-modal-box clearfix">
+            <li>
+                <a href="#">
+                    <img src="images/swiper_img_01.jpeg" alt="제품">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/swiper_img_02.jpeg" alt="제품">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/swiper_img_03.jpeg" alt="제품">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/swiper_img_04.jpeg" alt="제품">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/swiper_img_05.jpeg" alt="제품">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/swiper_img_06.jpeg" alt="제품">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/swiper_img_07.jpeg" alt="제품">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/swiper_img_08.jpeg" alt="제품">
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="images/swiper_img_09.jpeg" alt="제품">
+                </a>
+            </li>
+        </ul>
+
+        <div class="visual-modal-close">
+            <img src="images/btnMoreClose.jpeg" alt="닫기">
+        </div>
     </div>
 </body>
 
