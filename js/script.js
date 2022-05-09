@@ -168,6 +168,31 @@ $(document).ready(function () {
       $(".contents").css("padding-top", 0);
     }
   });
+
+  // 사이트맵
+  let sitemap = $(".sitemap");
+  let footer_link = $(".footer-site a");
+  let family_close = $(".family-close");
+
+  footer_link.click(function (event) {
+    event.preventDefault();
+    sitemap.slideToggle();
+    $(this).toggleClass("footer-site-active");
+  });
+
+  family_close.click(function () {
+    sitemap.slideToggle();
+    footer_link.toggleClass("footer-site-active");
+  });
+
+  $(window).scroll(function () {
+    let sc = $(window).scrollTop();
+    let cook_h = $(".cook-link").offset().top;
+    if (sc < cook_h) {
+      sitemap.css("display", "none");
+      footer_link.removeClass("footer-site-active");
+    }
+  });
 });
 
 window.onload = function () {
@@ -212,10 +237,12 @@ window.onload = function () {
 
   visual_modal_open.click(function () {
     visual_modal.fadeIn();
+    $("html").css("overflow", "hidden");
   });
 
   visual_modal_close.click(function () {
     visual_modal.fadeOut();
+    $("html").css("overflow", "auto");
   });
 
   // 알뜰상품 슬라이드
@@ -399,5 +426,177 @@ window.onload = function () {
       notice_btn.eq(index).addClass("notice-menu-focus");
       notice_list.eq(index).addClass("notice-list-focus");
     });
+  });
+
+  // 제철요리 장바구니
+  let cook_arr = [];
+  let cook_json = "cook.json";
+
+  // cook 자료를 배치할 html 요소
+  let cook_list = $(".cook-list");
+
+  let cook_html = "";
+
+  // 체크 버튼
+  let cook_bt;
+  // 전체  선택 버튼 저장
+  let cook_bt_all = $(".cook-total .cook-bt");
+
+  // 데이터를 불러와서 parsing(분해)
+  fetch(cook_json)
+    .then((res) => res.json())
+    .then((result) => {
+      for (let i = 0; i < result.length; i++) {
+        cook_arr[i] = result[i];
+        cook_arr[i].cook_price = parseInt(cook_arr[i].cook_price);
+        cook_arr[i].cook_check = 1;
+      }
+      // 데이터를 화면에 표현
+      // cook_html을 만들어낸다.
+      for (let i = 0; i < result.length; i++) {
+        console.log(cook_arr[i]);
+        let temp = cook_arr[i];
+        cook_html += `<li>
+        <button class="cook-bt"></button>
+        <a href=${temp.cook_link}" class="cook-good">
+            <img src="images/${temp.cook_pic}" alt="${temp.cook_pic}">
+            <p class="cook-good-info">
+                <span class="cook-good-title">${temp.cook_name}${
+          temp.cook_info
+        }</span>
+                <span class="cook-good-price">
+                    <b>${temp.cook_price.toLocaleString()}</b>원
+                </span>
+            </p>
+        </a>
+    </li>`;
+      }
+      // html로 삽입
+      cook_list.html(cook_html);
+
+      // html이 존재하므로. 중괄호 scope.
+      cook_bt = cook_list.find(".cook-bt");
+
+      // Nicescroll
+      let cook_wrap = $(".cook-wrap");
+      cook_wrap.niceScroll({
+        cursoropacitymax: 0.3,
+        cursorwidth: "7px",
+        cursorborderradius: "10px",
+      });
+
+      makeCookBt();
+      cookCalc();
+    })
+    .catch();
+
+  // 가격 합
+  let cook_price_total = $("#cook-price-total");
+
+  // 장바구니 카운팅
+  let bucket_i = $(".bucket i");
+  let count = 0;
+  let cook_link = $(".cook-link");
+  // 전체선택 개수
+  let cook_count = $("#cook-count");
+
+  // 총 합계 구하기
+  function cookCalc() {
+    let total = 0;
+    count = 0;
+    for (let i = 0; i < cook_arr.length; i++) {
+      if (cook_arr[i].cook_check === 1) {
+        total += cook_arr[i].cook_price;
+        count++;
+      }
+    }
+    cook_price_total.html(total.toLocaleString());
+    // bucket_i.text(count);
+
+    cook_link.click(function (event) {
+      event.preventDefault();
+      bucket_i.text(count);
+      bucket_i.removeClass("updown-ani");
+      setTimeout(function () {
+        bucket_i.addClass("updown-ani");
+      }, 500);
+    });
+
+    cook_count.text(count);
+  }
+
+  // 체크 기능 만들기
+  function makeCookBt() {
+    $.each(cook_bt, function (index) {
+      $(this).click(function (event) {
+        event.stopPropagation();
+        cook_arr[index].cook_check *= -1;
+
+        // 체크 버튼 모양 변경
+        $(this).toggleClass("cook-bt-inactive");
+        // 전체 가격 갱신
+        cookCalc();
+        // 전체 선택 버튼 기능
+        cookAllBt();
+      });
+    });
+  }
+
+  // 전체 선택 버튼 기능
+  // 전체 선택 상태 1
+  let cook_all_check = 1;
+
+  function cookAllBt() {
+    for (let i = 0; i < cook_arr.length; i++) {
+      if (cook_arr[i].cook_check !== 1) {
+        // 체크 해제 상태 0
+        cook_all_check = 0;
+        break;
+      } else {
+        cook_all_check = 1;
+      }
+    }
+
+    if (cook_all_check == 1) {
+      cook_bt_all.removeClass("cook-bt-inactive");
+    } else {
+      cook_bt_all.addClass("cook-bt-inactive");
+    }
+  }
+
+  // 전체 버튼 클릭
+  cook_bt_all.click(function (event) {
+    event.stopPropagation();
+    if (cook_all_check == 1) {
+      cook_all_check = 0;
+    } else {
+      cook_all_check = 1;
+    }
+
+    if (cook_all_check == 1) {
+      for (let i = 0; i < cook_arr.length; i++) {
+        cook_arr[i].cook_check = 1;
+      }
+    } else {
+      for (let i = 0; i < cook_arr.length; i++) {
+        cook_arr[i].cook_check = -1;
+      }
+    }
+
+    $.each(cook_bt, function (index) {
+      if (cook_all_check == 1) {
+        $(this).removeClass("cook-bt-inactive");
+      } else {
+        $(this).addClass("cook-bt-inactive");
+      }
+    });
+
+    if (cook_all_check == 1) {
+      cook_bt_all.removeClass("cook-bt-inactive");
+    } else {
+      cook_bt_all.addClass("cook-bt-inactive");
+    }
+
+    cookCalc();
   });
 };

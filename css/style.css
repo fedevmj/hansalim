@@ -304,7 +304,8 @@ body {
   -webkit-transform: translate3d(0, 0, 0);
   -webkit-perspective: 0;
   -webkit-transition: 1s;
-  backface-visibility: hidden; /*뒷면 숨기기*/
+  backface-visibility: hidden;
+  /*뒷면 숨기기*/
   visibility: visible;
   transition: 1s;
   perspective: 1000px;
@@ -314,16 +315,19 @@ body {
   position: absolute;
   transform: rotateY(0deg);
 }
+
 .modal-back {
   transform: rotateY(-180deg);
 }
 
 .modal-wrap:hover .modal-front {
-  transform: rotateY(180deg); /*y축을 기준으로 180도까지회전*/
+  transform: rotateY(180deg);
+  /*y축을 기준으로 180도까지회전*/
 }
 
 .modal-wrap:hover .modal-back {
-  transform: rotateY(0deg); /*y축을 기준으로 0도 까지회전*/
+  transform: rotateY(0deg);
+  /*y축을 기준으로 0도 까지회전*/
 }
 
 .modal-wrap h1 {
@@ -781,6 +785,7 @@ body {
   position: relative;
   display: inline-block;
 }
+
 .all-list-theme .ball::before {
   top: 10px;
 }
@@ -845,6 +850,7 @@ body {
   position: relative;
   /* display: none; */
 }
+
 .all-menu-detail-list li {
   position: relative;
   display: block;
@@ -960,6 +966,7 @@ body {
   font-weight: 500;
   color: #000;
 }
+
 .dropdown-list li a:hover::after {
   content: "";
   position: absolute;
@@ -1102,6 +1109,29 @@ body {
   font-size: 11px;
   font-weight: 700;
   color: #fff;
+}
+
+.updown-ani {
+  /* animation: bucket-ani 0.5s ease-in-out 0 5; */
+  animation-name: bucket-ani;
+  animation-duration: 0.5s;
+  animation-delay: 0;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 5;
+}
+
+@keyframes bucket-ani {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(3px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* 메인 */
@@ -1298,7 +1328,7 @@ body {
 
 .visual-modal-close {
   position: absolute;
-  right: 250px;
+  left: calc(50% + 650px);
   top: 50px;
   display: block;
   cursor: pointer;
@@ -2185,6 +2215,11 @@ body {
   background-position: 0px -36px;
   border: 0;
   cursor: pointer;
+  z-index: 9;
+}
+
+.cook-bt-inactive {
+  background-position: 0px 0px !important;
 }
 
 .cook-list {
@@ -2726,7 +2761,7 @@ body {
 
 .footer-site {
   position: absolute;
-  right: 0;
+  left: calc(50% + 450px);
   top: 0;
   display: block;
 }
@@ -2734,12 +2769,19 @@ body {
 .footer-site a {
   position: relative;
   display: block;
+  width: 200px;
   font-size: 13px;
   font-weight: 500;
   line-height: 55px;
   color: #666;
   letter-spacing: -0.325px;
   overflow: hidden;
+  padding-right: 10px;
+  transition: background-color 0.3s;
+}
+
+.footer-site-active {
+  background-color: #f4f4f4;
 }
 
 .footer-site a span {
@@ -2872,7 +2914,7 @@ body {
 .sitemap {
   position: absolute;
   left: 0;
-  bottom: -100px;
+  bottom: 239px;
   display: none;
   width: 100%;
   background-color: #f4f4f4;
