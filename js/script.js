@@ -454,7 +454,7 @@ window.onload = function () {
       // 데이터를 화면에 표현
       // cook_html을 만들어낸다.
       for (let i = 0; i < result.length; i++) {
-        console.log(cook_arr[i]);
+        // console.log(cook_arr[i]);
         let temp = cook_arr[i];
         cook_html += `<li>
         <button class="cook-bt"></button>
